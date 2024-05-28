@@ -1,0 +1,46 @@
+.navbar {
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #950101;
+    padding: 10px;
+    position: fixed;
+    z-index: 100;
+    border-radius: 10px;
+}
+.sections {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar button {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: medium;
+    height: 30px;
+    width: 100px;
+    background: transparent;
+    color: #3d0000;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.navbar button:hover,
+.navbar button:active {
+    border-color: #ff0000;
+}
+.contact{
+    display: flex;
+}
+.contact a{
+    margin-right: 15px;
+    border-bottom: 2px solid transparent;
+}
+.contact a:hover,
+.contact a:active{
+    border-color: #ff0000;
+}
