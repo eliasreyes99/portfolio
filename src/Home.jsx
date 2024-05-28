@@ -19,10 +19,8 @@ export default function Home() {
         <div id="aboutme" className="aboutme">
         </div>
         <div id="mywork" className="mywork">
-          sdsdsd
         </div>
         <div id="contact" className="contact">
-          sñlñlñ
         </div>
       </div>
     </div>
