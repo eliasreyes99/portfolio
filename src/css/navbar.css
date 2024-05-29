@@ -3,12 +3,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #950101;
+    background-color: #ff0000;
     padding: 10px;
     position: fixed;
     z-index: 100;
     border-radius: 10px;
 }
+
 .sections {
     display: flex;
     list-style: none;
@@ -18,11 +19,12 @@
 
 .navbar button {
     font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
     font-size: medium;
     height: 30px;
     width: 100px;
     background: transparent;
-    color: #3d0000;
+    color: black;
     border: none;
     border-bottom: 2px solid transparent;
     cursor: pointer;
@@ -31,16 +33,87 @@
 
 .navbar button:hover,
 .navbar button:active {
-    border-color: #ff0000;
+    border-color: black;
+    transform: scale(1.2);
 }
-.contact{
+
+.contact {
     display: flex;
 }
-.contact a{
+
+.contact a {
     margin-right: 15px;
     border-bottom: 2px solid transparent;
 }
+
 .contact a:hover,
-.contact a:active{
-    border-color: #ff0000;
+.contact a:active {
+    border-color: black;
+    transform: scale(1.2);
+}
+
+@media only screen and (max-width: 800px){
+    .navbar {
+        width: 90%;
+        height: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ff0000;
+        position: fixed;
+        z-index: 100;
+        border-radius: 10px;
+    }
+
+    .navbar button {
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        font-size: 10px;
+        height: 20px;
+        width: 60px;
+        background: transparent;
+        color: black;
+        border: none;
+        border-bottom: 2px solid transparent;
+        cursor: pointer;
+        transition: border-color 0.3s;
+    }
+
+    .navbar button:hover,
+    .navbar button:active {
+        border-color: black;
+        transform: scale(1.2);
+    }
+
+    .contact a:hover,
+    .contact a:active {
+        border-color: black;
+        transform: scale(1.2);
+    }
+
+    .contact {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .contact a {
+        align-items: center;
+    }
+
+    .linkedin {
+        width: 13px;
+        height: 13px;
+    }
+
+    .github {
+        width: 13px;
+        height: 13px;
+    }
+
+    .phone {
+        width: 13px;
+        height: 13px;
+    }
+
+
 }

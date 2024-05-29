@@ -37,19 +37,19 @@ export default function Navbar() {
               target="_blank"
               rel="noreferrer"
             >
-              <LinkedinIcon color="black" />
+              <LinkedinIcon className="linkedin" color="black" />
             </a>
             <a
               href="https://github.com/eliasreyes99"
               target="_blank"
               rel="noreferrer"
             >
-              <GithubIcon color="black" />
+              <GithubIcon className="github" color="black" />
             </a>
             <a href="https://wa.me/3321747670"
             target="_blank"
             rel="noreferrer">
-              <PhoneIcon color="black" />
+              <PhoneIcon className="phone" color="black" />
             </a>
           </div>
         </div>
