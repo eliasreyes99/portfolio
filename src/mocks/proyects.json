@@ -1,0 +1,27 @@
+{
+    "proyects": [
+        {
+            "id": "1",
+            "title": "Search movies",
+            "description": "This is a web application that allows you to browse movies, search by title, and add movies to a favorites list. Favorite movies are stored in localStorage, allowing them to remain saved even after you close the page.",
+            "img": "/images/SearchMovies.jpg",
+            "img2": "/images/SearchMovies2.jpg",
+            "img3": "/images/SearchMovies3.jpg",
+            "tecnologis": "React, js, css, hml",
+            "enlace": "https://tubular-youtiao-6738f5.netlify.app/",
+            "github":"https://github.com/eliasreyes99/Search-Movies"
+        },
+        {
+            "id": "2",
+            "title": "Sales notes",
+            "description": "On this platform, you can register your business and manage clients, adding personalized notes for better tracking. All information is securely stored in a database.",
+            "img": "/images/SalesNotes1.jpg",
+            "img2": "/images/SalesNotes2.jpg",
+            "img3": "/images/SalesNotes3.jpg",
+            "img4": "/images/SalesNotes4.jpg",
+            "img5": "/images/SalesNotes5.jpg",
+            "tecnologis": "React, js, css, html, nodejs, express, postgesql",
+            "github":"https://github.com/eliasreyes99/SalesNotes"
+        }
+    ]
+}

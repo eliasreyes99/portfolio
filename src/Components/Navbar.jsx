@@ -1,57 +1,85 @@
-import React from "react";
-import '../css/navbar.css'
-import { LinkedinIcon } from "lucide-react";
-import { GithubIcon } from "lucide-react";
-import { PhoneIcon } from "lucide-react";
+import React, { useEffect, useRef } from "react";
+import "../css/navbar.css";
 
 export default function Navbar() {
+  const navRef = useRef(null);
+  const burgerRef = useRef(null);
+
   const scrollToSection = (id) => {
-    const elemnet = document.getElementById(id);
-    if (elemnet) {
-      elemnet.scrollIntoView({ behavior: "smooth" });
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  // Mueve handleBurgerClick fuera del useEffect
+  const handleBurgerClick = () => {
+    const nav = navRef.current;
+    const burger = burgerRef.current;
+    const navLinks = nav.querySelectorAll("li");
+
+    nav.classList.toggle("nav-active");
+
+    navLinks.forEach((link, index) => {
+      if (link.style.animation) {
+        link.style.animation = "";
+      } else {
+        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+      }
+    });
+
+    burger.classList.toggle("toggle");
+  };
+
+  useEffect(() => {
+    const burger = burgerRef.current;
+
+    burger.addEventListener("click", handleBurgerClick);
+
+    return () => {
+      burger.removeEventListener("click", handleBurgerClick);
+    };
+  }, []);
+
   return (
-        <div className="navbar">
-          <ul className="sections">
-            <li>
-              <button onClick={() => scrollToSection("home")}>Home</button>
-            </li>
-            <li>
-              <button onClick={() => scrollToSection("aboutme")}>
-                About me
-              </button>
-            </li>
-            <li>
-              <button onClick={() => scrollToSection("mywork")}>My work</button>
-            </li>
-            <li>
-              <button onClick={() => scrollToSection("contact")}>
-                Contact
-              </button>
-            </li>
-          </ul>
-          <div className="contact">
-            <a
-              href="https://www.linkedin.com/in/elias-reyes-gonzalez-873778269/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <LinkedinIcon className="linkedin" color="black" />
-            </a>
-            <a
-              href="https://github.com/eliasreyes99"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <GithubIcon className="github" color="black" />
-            </a>
-            <a href="https://wa.me/3321747670"
-            target="_blank"
-            rel="noreferrer">
-              <PhoneIcon className="phone" color="black" />
-            </a>
-          </div>
-        </div>
+    <div className="navbar">
+      <ul className="nav-links" ref={navRef}>
+        <li>
+          <button
+            onClick={() => {
+              scrollToSection("home");
+              handleBurgerClick();
+            }}
+          >
+            Home
+          </button>
+        </li>
+        <li>
+          <button
+            onClick={() => {
+              scrollToSection("skills");
+              handleBurgerClick();
+            }}
+          >
+            Skills
+          </button>
+        </li>
+        <li>
+          <button
+            onClick={() => {
+              scrollToSection("mywork");
+              handleBurgerClick();
+            }}
+          >
+            My work
+          </button>
+        </li>
+      </ul>
+      <div className="burger" ref={burgerRef}>
+        <div className="line1"></div>
+        <div className="line2"></div>
+        <div className="line3"></div>
+      </div>
+    </div>
   );
 }

@@ -1,119 +1,107 @@
 .navbar {
-    width: 98%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ff0000;
-    padding: 10px;
+    width: 100%;
+    background-color: #4B5358;
+    padding: 8px;
     position: fixed;
-    z-index: 100;
-    border-radius: 10px;
+    z-index: 2;
 }
 
-.sections {
+.nav-links {
+
     display: flex;
+    align-items: center;
+    justify-content: center;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
+.nav-links li {
+    margin-left: 20px;
+}
+
 .navbar button {
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
-    font-size: medium;
-    height: 30px;
+    font-size: 20px;
+    height: 20px;
     width: 100px;
     background: transparent;
-    color: black;
+    color: rgb(255, 255, 255);
     border: none;
-    border-bottom: 2px solid transparent;
     cursor: pointer;
-    transition: border-color 0.3s;
+    padding: 2px;
 }
 
-.navbar button:hover,
-.navbar button:active {
-    border-color: black;
+.navbar button:hover {
     transform: scale(1.2);
+    color: rgb(21, 255, 0);
+
 }
 
-.contact {
-    display: flex;
+.burger {
+    display: none;
+    cursor: pointer;
 }
 
-.contact a {
-    margin-right: 15px;
-    border-bottom: 2px solid transparent;
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(21, 255, 0);
+    margin: 5px;
+    transition: all 0.3s ease;
 }
 
-.contact a:hover,
-.contact a:active {
-    border-color: black;
-    transform: scale(1.2);
-}
-
-@media only screen and (max-width: 800px){
-    .navbar {
-        width: 90%;
-        height: 10px;
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        left: 0;
+        height: 100vh;
+        top: 0;
+        background-color: #585858;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #ff0000;
-        position: fixed;
-        z-index: 100;
-        border-radius: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 35%;
+        transform: translateX(-150%);
+        transition: transform 0.5s ease-in;
+        padding-top: 30px;
+
     }
 
-    .navbar button {
-        font-family: 'Times New Roman', Times, serif;
-        font-weight: bold;
-        font-size: 10px;
-        height: 20px;
-        width: 60px;
-        background: transparent;
-        color: black;
-        border: none;
-        border-bottom: 2px solid transparent;
-        cursor: pointer;
-        transition: border-color 0.3s;
+    .nav-links li {
+        padding-left: 5px;
+        margin: 20px 0;
+        text-align: start;
     }
 
-    .navbar button:hover,
-    .navbar button:active {
-        border-color: black;
-        transform: scale(1.2);
+    .burger {
+        display: block;
+    }
+    
+    .nav-links button {
+        font-size: large;
+        width: 100%;
+        padding-left: 15px;
+
     }
 
-    .contact a:hover,
-    .contact a:active {
-        border-color: black;
-        transform: scale(1.2);
+    .nav-active {
+        transform: translateX(0);
     }
-
-    .contact {
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    .contact a {
-        align-items: center;
-    }
-
-    .linkedin {
-        width: 13px;
-        height: 13px;
-    }
-
-    .github {
-        width: 13px;
-        height: 13px;
-    }
-
-    .phone {
-        width: 13px;
-        height: 13px;
-    }
+}
 
 
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
